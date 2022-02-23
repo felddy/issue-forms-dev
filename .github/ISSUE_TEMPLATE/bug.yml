@@ -1,9 +1,9 @@
-name: Bug Report
+name: 🐛 Bug Report
 description: File a bug report
 title: "[Bug]: "
 labels: ["bug", "triage"]
 assignees:
-  - octocat
+  - felddy
 body:
   - type: markdown
     attributes:
@@ -18,12 +18,63 @@ body:
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
+      label: Bug description
+      description: A clear and concise description of what the bug is.
+      placeholder: |
+        When I click on the purple widget, it turns blue.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: To reproduce
+      description: What are the steps to reproduce the behavior?
+      placeholder: |
+        - Navigate to the "color selector" page.
+        - Scroll down to the purple colors.
+        - Click on the purple widget.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description:
+      placeholder: |
+        A clear and concise description of what you expected to happen.
       value: "A bug happened!"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        The following command will output your container metadata:
+
+        ```bash
+        docker inspect --format='{{range $k, $v := .Config.Labels}}
+            {{- printf "%s = \"%s\"\n" $k $v -}} {{end}}' \
+            felddy/foundryvtt:release
+        ```
+  - type: textarea
+    id: container-metadata
+    attributes:
+      label: Container metadata
+      description: Paste the output from the command above below. This will be automatically formatted, so no need for backticks.
+      render: shell
+      placeholder: |
+        com.foundryvtt.version = "9.249"
+        org.opencontainers.image.authors = "markf+github@geekpad.com"
+        org.opencontainers.image.created = "2022-02-02T00:25:33Z"
+        org.opencontainers.image.description = "An easy-to-deploy Dockerized Foundry Virtual Tabletop server."
+        org.opencontainers.image.licenses = "MIT"
+        org.opencontainers.image.revision = "0c07de7afc08565891092a9b68a31d8ca2101629"
+        org.opencontainers.image.source = "https://github.com/felddy/foundryvtt-docker.git"
+        org.opencontainers.image.title = "foundryvtt-docker"
+        org.opencontainers.image.url = "https://github.com/felddy/foundryvtt-docker"
+        org.opencontainers.image.vendor = "Geekpad"
+        org.opencontainers.image.version = "9.249.0"
     validations:
       required: true
   - type: dropdown
@@ -32,8 +83,9 @@ body:
       label: Version
       description: What version of our software are you running?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - release
+        - pre-release
+        - other
     validations:
       required: true
   - type: dropdown
