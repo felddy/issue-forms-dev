@@ -65,16 +65,27 @@ body:
       render: shell
       placeholder: |
         com.foundryvtt.version = "9.249"
+
         org.opencontainers.image.authors = "markf+github@geekpad.com"
+
         org.opencontainers.image.created = "2022-02-02T00:25:33Z"
+
         org.opencontainers.image.description = "An easy-to-deploy Dockerized Foundry Virtual Tabletop server."
+
         org.opencontainers.image.licenses = "MIT"
+
         org.opencontainers.image.revision = "0c07de7afc08565891092a9b68a31d8ca2101629"
+
         org.opencontainers.image.source = "https://github.com/felddy/foundryvtt-docker.git"
+
         org.opencontainers.image.title = "foundryvtt-docker"
+
         org.opencontainers.image.url = "https://github.com/felddy/foundryvtt-docker"
+
         org.opencontainers.image.vendor = "Geekpad"
+
         org.opencontainers.image.version = "9.249.0"
+
     validations:
       required: true
   - type: dropdown
