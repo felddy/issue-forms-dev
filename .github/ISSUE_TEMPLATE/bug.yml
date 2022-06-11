@@ -40,10 +40,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        The following command will print your container metadata:
+        Use the following command to print your container metadata:
 
         ```bash
-        docker inspect --format='{{range $k, $v := .Config.Labels}} {{- printf "%s = \"%s\"\n" $k $v -}} {{end}}' felddy/foundryvtt:release
+        docker inspect --format='{{range $k, $v := .Config.Labels}}
+            {{- printf "%s = \"%s\"\n" $k $v -}} {{end}}' \
+            felddy/foundryvtt:release
         ```
   - type: textarea
     id: container-metadata
