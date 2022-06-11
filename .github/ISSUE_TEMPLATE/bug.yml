@@ -21,12 +21,13 @@ body:
   - type: textarea
     id: steps
     attributes:
-      label: To reproduce
+      label: Steps to reproduce
       description: What are the steps to reproduce the behavior?
       placeholder: |
         - Navigate to the "color selector" page.
         - Scroll down to the purple colors.
         - Click on the purple widget.
+      render: markdown
     validations:
       required: true
   - type: textarea
@@ -53,17 +54,17 @@ body:
       description: Paste the output from the command above. This will be automatically formatted, so no need for backticks.
       render: shell
       placeholder: |
-        com.foundryvtt.version = "9.249"
+        com.foundryvtt.version = 
         org.opencontainers.image.authors = "markf+github@geekpad.com"
-        org.opencontainers.image.created = "2022-02-02T00:25:33Z"
+        org.opencontainers.image.created = 
         org.opencontainers.image.description = "An easy-to-deploy Dockerized Foundry Virtual Tabletop server."
         org.opencontainers.image.licenses = "MIT"
-        org.opencontainers.image.revision = "0c07de7afc08565891092a9b68a31d8ca2101629"
+        org.opencontainers.image.revision = 
         org.opencontainers.image.source = "https://github.com/felddy/foundryvtt-docker.git"
         org.opencontainers.image.title = "foundryvtt-docker"
         org.opencontainers.image.url = "https://github.com/felddy/foundryvtt-docker"
         org.opencontainers.image.vendor = "Geekpad"
-        org.opencontainers.image.version = "9.249.0"
+        org.opencontainers.image.version =
     validations:
       required: true
   - type: textarea
@@ -86,7 +87,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      description: By submitting this issue, you agree to follow our [Code of Conduct](/CODE_OF_CONDUCT.md)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
