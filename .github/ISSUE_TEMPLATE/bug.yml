@@ -1,7 +1,7 @@
 name: 🐛 Bug Report
 description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
+title: ""
+labels: [":bug: bug"]
 assignees:
   - felddy
 body:
@@ -27,7 +27,6 @@ body:
         - Navigate to the "color selector" page.
         - Scroll down to the purple colors.
         - Click on the purple widget.
-      render: markdown
     validations:
       required: true
   - type: textarea
