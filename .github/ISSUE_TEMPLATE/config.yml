@@ -7,3 +7,5 @@ contact_links:
   - name: 🎮 FoundryVTT Discord
     url: https://discord.gg/cckUjUKX
     about: Visit the official FoundryVTT Discord server
+  - name: 🏵 FoundryVTT issue tracker
+    url: https://github.com/foundryvtt/foundryvtt/issues
