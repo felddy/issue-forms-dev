@@ -1,6 +1,6 @@
 name: 💥 Regression Report
 description: Report unexpected behavior that worked in previous versions
-labels: ["regression 💥"]
+labels: ["regression :boom:"]
 assignees:
   - felddy
 body:
@@ -11,10 +11,26 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Bug description
-      description: A clear and concise description of what the bug is.
+      label: Regression description
+      description: A clear and concise description of what the regression is.
       placeholder: |
-        The widget color selector does not apply the correct color.
+        The object color selector used to list purple.  Now it does not.
+    validations:
+      required: true
+  - type: input
+    id: worked-up-to-version
+    attributes:
+      label: Worked up to version
+      description: What was the last version that was working?
+      placeholder: x.y.z
+    validations:
+      required: true
+  - type: input
+    id: stopped-working-in-version
+    attributes:
+      label: Stopped working in version
+      description: What version did it stop working in?
+      placeholder: x.y.z
     validations:
       required: true
   - type: textarea
@@ -26,8 +42,7 @@ body:
         - Select an object on the page.
         - Right-click on the selected object.
         - Choose a color from the color change popup menu.
-        - Click on the purple color selection.
-        - Notice the object turns yellow instead of purple.
+        - Notice purple is not in the list.
     validations:
       required: true
   - type: textarea
@@ -36,7 +51,7 @@ body:
       label: Expected behavior
       description: A clear and concise description of what you expected to happen.
       placeholder: |
-        I expect that the selected object will turn the color selected.
+        I expect that purple would be in the color selection list.
     validations:
       required: true
   - type: markdown
